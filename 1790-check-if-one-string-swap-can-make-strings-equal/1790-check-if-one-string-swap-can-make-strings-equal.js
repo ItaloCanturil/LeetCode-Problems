@@ -8,10 +8,10 @@ var areAlmostEqual = function(s1, s2) {
   const array = [];
   for(let i = 0; i < s1.length; i++) {
     if(s1[i] !== s2[i]) {
-      array.push(s1[i]);
+      array.push(i);
     }
-    if (array.length > 2) return false;
   }
+  if (array.length !== 0 && array.length !== 2) return false;
 
-  return s2.includes(array[0]) && s2.includes(array[1]);
+  return (s1[array[0]] === s2[array[1]] && (s2[array[0]] === s1[array[1]]));
 };
